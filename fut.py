@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-print("size. (long - l / short - s)")
+print("side. (long - l / short - s)")
 SIDE = input("> ")
 
 print("---" * 9)
