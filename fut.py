@@ -1,28 +1,27 @@
 #!/bin/python3
-
-import pandas as pd
+import pyperclip
 from colorama import Fore, Back, Style
 
 print("[" + Fore.YELLOW + "?" + Fore.RESET + "] " +
-      "Side. " + Fore.CYAN + "(long - l / short - s)" + Fore.RESET)
+      "Side | " + Fore.CYAN + "(long - l / short - s)" + Fore.RESET)
 SIDE = input(Fore.LIGHTRED_EX + ">> " + Fore.RESET)
 
 print(Fore.RED + "---" * 9 + Fore.RESET)
 print()
 print("[" + Fore.YELLOW + "?" + Fore.RESET + "] " +
-      "Percent. " + Fore.CYAN + "(default - 0.159)" + Fore.RESET)
-SIZE = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "0.159")
+      "Percent | " + Fore.CYAN + "(default - 0.089)" + Fore.RESET)
+SIZE = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "0.089")
 
 print(Fore.RED + "---" * 9 + Fore.RESET)
 print()
 print("[" + Fore.YELLOW + "?" + Fore.RESET + "] " +
-      "Stop-Loss. " + Fore.CYAN + "(default - 0.85)" + Fore.RESET)
-PERC = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "0.85")
+      "Stop-Loss | " + Fore.CYAN + "(default - 0.41)" + Fore.RESET)
+PERC = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "0.41")
 
 print(Fore.RED + "---" * 9 + Fore.RESET)
 print()
 print("[" + Fore.YELLOW + "?" + Fore.RESET + "] " +
-      "Price. " + Fore.CYAN + "(example: 1011 - ETH/USD)" + Fore.RESET)
+      "Price | " + Fore.CYAN + "(example: 1011 - ETH/USD)" + Fore.RESET)
 POS = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET).replace(",", ""))
 print(Fore.RED + "---" * 9 + Fore.RESET)
 
@@ -33,8 +32,7 @@ if SIDE == "l":
     long2 = long1[0:7]
     print(Fore.YELLOW + "\nLimit Order:" + Fore.RESET)
     print(long2)
-    df = pd.DataFrame([long2])
-    df.to_clipboard(index=False, header=False)
+    df = pyperclip.copy(long2)
     tt = float(long2)
     stoploss = ((tt * PERC) / 100 - POS)
 
@@ -49,8 +47,7 @@ if SIDE == "s":
     short2 = short1[1:8]
     print(Fore.YELLOW + "\nLimit Order:" + Fore.RESET)
     print(short2)
-    df1 = pd.DataFrame([short2])
-    df1.to_clipboard(index=False, header=False)
+    df1 = pyperclip.copy(short2)
 
     tt = float(short2)
     stoploss1 = ((tt * PERC) / 100 + POS)
