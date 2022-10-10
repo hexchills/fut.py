@@ -9,14 +9,14 @@ SIDE = input(Fore.LIGHTRED_EX + ">> " + Fore.RESET)
 print(Fore.RED + "---" * 9 + Fore.RESET)
 print()
 print("[" + Fore.YELLOW + "?" + Fore.RESET + "] " +
-      "Percent | " + Fore.CYAN + "(default - 0.089)" + Fore.RESET)
-SIZE = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "0.089")
+      "Take profit [" + Fore.LIGHTYELLOW_EX +  "%" + Fore.RESET + "] | " + Fore.CYAN + "(default - 2.5)" + Fore.RESET)
+SIZE = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "2.5")
 
 print(Fore.RED + "---" * 9 + Fore.RESET)
 print()
 print("[" + Fore.YELLOW + "?" + Fore.RESET + "] " +
-      "Stop-Loss | " + Fore.CYAN + "(default - 0.41)" + Fore.RESET)
-PERC = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "0.41")
+      "Stop-Loss [" + Fore.LIGHTYELLOW_EX + "%" + Fore.RESET + "] | " + Fore.CYAN + "(default - 3)" + Fore.RESET)
+PERC = float(input(Fore.LIGHTRED_EX + ">> " + Fore.RESET) or "3")
 
 print(Fore.RED + "---" * 9 + Fore.RESET)
 print()
